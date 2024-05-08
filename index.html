@@ -1,3 +1,22 @@
-hi
-<a href="blank.txt" download="blank.txt">Download link</a>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Download blank.txt</title>
+</head>
+<body>
+  <a href="#" id="downloadLink">Download blank.txt</a>
+  <script>
+    const downloadLink = document.getElementById('downloadLink');
+    downloadLink.addEventListener('click', downloadFile);
+
+    function downloadFile() {
+      const filename = "blank.txt";
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(new Blob([]));
+      link.download = filename;
+      link.click();
+    }
+  </script>
+</body>
+</html>
 
